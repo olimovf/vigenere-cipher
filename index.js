@@ -22,7 +22,7 @@ function vigenere(key, str, mode = 'encrypt') {
 }
 
 
-/** create table **/
+// == // == // == CREATE TABLE == // == // == // == 
 const tableContent = [];
 for (let i = 0; i < MOD; i++) {
   const tableRow = [];
@@ -36,10 +36,10 @@ for (let i = 0; i < tableContent.length; i++) {
   tableContent[i].unshift(tableContent[i][0])
 }
 tableContent.unshift((' ' + ALPHABET).split(''));
-// == // == // == // == // == // == // == // == // == // == // == // == 
+// == // == // == // == // == // == // == // == // == // ==
 
 
-/** display table */
+// == // == // == DISPLAY TABLE == // == // == // ==
 const table = document.querySelector('table');
 
 for (let i = 0; i <= MOD; i++) {
@@ -47,7 +47,7 @@ for (let i = 0; i <= MOD; i++) {
   tr.innerHTML = tableContent[i].map(x => `<td>${x}</td>`).join('');
   table.appendChild(tr);
 }
-// == // == // == // == // == // == // == // == // == // == // == // == 
+// == // == // == // == // == // == // == // == // == // == 
 
 
 function findCipherLetter(x, y) {
@@ -66,4 +66,30 @@ function findCipherLetter(x, y) {
   }, x * dt);
 }
 
-// findCipherLetter(10, 5);
+
+
+
+const txt = document.getElementById('txt');
+const plainTxt = document.getElementById('plain-txt');
+
+txt.addEventListener('input', (e) => {
+  plainTxt.value = e.target.value.toUpperCase();
+});
+
+const key = document.getElementById('key');
+const resultKey = document.getElementById('result-key');
+
+key.addEventListener('input', (e) => {
+  resultKey.value = e.target.value.toUpperCase();
+});
+
+const btnsItem = document.querySelectorAll('.btns__item');
+btnsItem.forEach(item => {
+  const btns = item.querySelectorAll('button');
+  btns.forEach(btn => {
+    btn.addEventListener('click', function () {
+      btns.forEach(b => b.classList.remove('active'));
+      this.classList.add('active');   
+    });
+  });
+});

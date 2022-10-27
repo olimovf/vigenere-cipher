@@ -8,6 +8,8 @@ body {
   font-size: 16px;
   font-family: 'Courier New', Courier, monospace;
   font-weight: 500;
+  background-color: #f3f3f3;
+  /* background-color: rgba(210, 246, 249, 0.685); */
 }
 
 textarea,
@@ -19,6 +21,12 @@ button {
 
 textarea {
   resize: none;
+}
+
+textarea,
+input {
+  /* outline: none; */
+  border: 1px solid #000;
 }
 
 .container {
@@ -66,8 +74,24 @@ textarea {
 }
 
 .btns__item button {
-  padding: 4px;
+  border: 1px solid #f1f1f1;
+  background-color: #fff;
+  padding: 8px;
   cursor: pointer;
+  border-radius: 2px;
+}
+
+.btns__item button:hover {
+  box-shadow: 0 2px 4px rgb(0 0 0 / 15%), 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+.btns__item button.active {
+  box-shadow: inset 0 2px 4px rgb(0 0 0 / 15%), 0 1px 2px rgb(0 0 0 / 5%);
+}
+
+
+.btns__item button:not(:first-child) {
+  border-left: none;
 }
 
 .table-wrapper {
@@ -92,15 +116,16 @@ table {
   /* width: 768px; */
 }
 
-.txt-1, .txt-2 {
+.txt-1,
+.txt-2 {
   font-size: 16px;
+  background-color: transparent;
 }
 
 .txt-1 {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #fff;
   padding: 2px 16px;
   top: -5px;
 }
@@ -109,9 +134,9 @@ table {
 .txt-1::before {
   content: "";
   position: absolute;
-  width: 100px;
+  width: 50px;
   height: 1px;
-  background-color: black;
+  background-color: #000;
   top: 50%;
   transform: translate(0, -50%);
 }
@@ -128,7 +153,6 @@ table {
   position: absolute;
   top: 50%;
   padding: 2px 16px;
-  background-color: #fff;
   left: -25px;
   z-index: 1;
   transform: translateY(-50%) rotate(-90deg);
@@ -193,5 +217,16 @@ td.col-active {
 @media (max-width: 1024px) {
   .container {
     flex-direction: column;
+  }
+}
+
+@media (max-width: 576px) {
+  .table-wrapper {
+    padding: 14px;
+  }
+
+  .txt-1::after,
+  .txt-1::before {
+    width: 50px;
   }
 }
