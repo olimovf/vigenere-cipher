@@ -25,6 +25,7 @@ textarea {
 
 textarea,
 input {
+  border-radius: 2px;
   /* outline: none; */
   border: 1px solid #000;
 }
@@ -57,7 +58,7 @@ input {
   margin-bottom: 4px;
 }
 
-.data__item.btns {
+.data__item.actions {
   display: flex;
   gap: 8px;
   flex-wrap: wrap;
@@ -69,28 +70,49 @@ input {
   padding: 8px;
 }
 
-.btns__item {
+.actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.actions__item {
   display: flex;
 }
 
-.btns__item button {
-  border: 1px solid #f1f1f1;
+.actions__item:first-child {
+  gap: 8px;
+}
+
+.actions__item div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.actions__item div input {
+  margin-bottom: 4px;
+}
+
+.actions__item button {
+  border: 1px solid #000;
   background-color: #fff;
   padding: 8px;
   cursor: pointer;
   border-radius: 2px;
 }
 
-.btns__item button:hover {
+.actions__item button:hover {
   box-shadow: 0 2px 4px rgb(0 0 0 / 15%), 0 1px 2px rgb(0 0 0 / 5%);
 }
 
-.btns__item button.active {
+/* .actions__item button.active {
   box-shadow: inset 0 2px 4px rgb(0 0 0 / 15%), 0 1px 2px rgb(0 0 0 / 5%);
-}
+} */
 
 
-.btns__item button:not(:first-child) {
+.actions__item button:not(:first-child) {
   border-left: none;
 }
 
@@ -194,14 +216,19 @@ tr td:first-child {
 }
 
 td {
-  padding: 8px;
+  padding: 4px 8px;
+  text-align: center;
   border-left: 1px solid;
   border-top: 1px solid;
 }
 
 td.row-active,
 td.col-active {
-  background-color: bisque;
+  background-color: rgb(241, 238, 157);
+}
+
+td.row-active.col-active {
+  background-color: rgb(246, 189, 120);
 }
 
 @keyframes bg-color {

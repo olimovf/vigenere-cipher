@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vigenere Cipher</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="./style.css">
 </head>
 
@@ -24,18 +27,23 @@
           <label for="key">Enter your secret key</label>
           <input type="text" id="key">
         </div>
-        <div class="data__item btns">
-          <div class="btns__item">
-            <button class="active">Encrypt</button>
-            <button>Decrypt</button>
+        <div class="data__item actions">
+          <div class="actions__item">
+            <div>
+              <input type="radio" name="cipher" id="encrypt" checked>
+              <label for="encrypt">Encrypt</label>
+            </div>
+            <div>
+              <input type="radio" name="cipher" id="decrypt">
+              <label for="decrypt">Decrypt</label>
+            </div>
           </div>
-          <div class="btns__item">
-            <button>x</button>
-            <button>x</button>
-            <button>x</button>
-            <button>x</button>
-            <button>x</button>
-            <button>x</button>
+          <div class="actions__item">
+            <button title="restart" id="restart"><i class="fa-solid fa-rotate-right"></i></button>
+            <button title="play" id="play"><i class="fa-sharp fa-solid fa-play"></i></button>
+            <!-- <button><i class="fa-solid fa-pause"></i></button> -->
+            <button title="step" id="step"><i class="fa-solid fa-forward-step"></i></button>
+            <button title="fast forward" id="fast-forward"><i class="fa-solid fa-forward-fast"></i></button>
           </div>
         </div>
       </div>
@@ -53,7 +61,7 @@
         </div>
         <div class="data__item">
           <label for="">Cipher text</label>
-          <textarea id="" cols="30" rows="5" readonly></textarea>
+          <textarea id="result-txt" cols="30" rows="5" readonly></textarea>
         </div>
       </div>
     </div>
