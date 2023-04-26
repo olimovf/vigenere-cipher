@@ -5,6 +5,8 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords"
+    content="vigenere,cipher,visualiztion,classic cipher algorithm">
   <title>Vigenere Cipher</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
     integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
@@ -17,11 +19,11 @@
     <div class="data">
       <div class="cipher">
         <div class="data__item">
-          <h3>Cipher</h3>
+          <h3>Vigenere Cipher Visualization</h3>
         </div>
         <div class="data__item">
           <label for="txt">Enter your text message</label>
-          <textarea id="txt" cols="30" rows="5"></textarea>
+          <textarea id="txt" cols="30" rows="4"></textarea>
         </div>
         <div class="data__item">
           <label for="key">Enter your secret key</label>
@@ -29,39 +31,47 @@
         </div>
         <div class="data__item actions">
           <div class="actions__item">
-            <div>
-              <input type="radio" name="cipher" id="encrypt" checked>
-              <label for="encrypt">Encrypt</label>
-            </div>
-            <div>
-              <input type="radio" name="cipher" id="decrypt">
-              <label for="decrypt">Decrypt</label>
-            </div>
+            <button id="encrypt" class="active">Encrypt</button>
+            <button id="decrypt">Decrypt</button>
           </div>
           <div class="actions__item">
-            <button title="restart" id="restart"><i class="fa-solid fa-rotate-right"></i></button>
-            <button title="play" id="play"><i class="fa-sharp fa-solid fa-play"></i></button>
-            <!-- <button><i class="fa-solid fa-pause"></i></button> -->
-            <button title="step" id="step"><i class="fa-solid fa-forward-step"></i></button>
-            <button title="fast forward" id="fast-forward"><i class="fa-solid fa-forward-fast"></i></button>
+            <button id="play">Run</button>
+          </div>
+        </div>
+        <div class="data__item">
+          <label for="speed">Encryption speed</label>
+          <div class="speed-wrapper">
+            <span>Slow</span>
+            <input id="speed" type="range" min="0" max="2000" value="1000">
+            <span>Fast</span>
           </div>
         </div>
       </div>
+      <hr>
       <div class="result">
         <div class="data__item">
           <h3>Result</h3>
         </div>
         <div class="data__item">
-          <label for="plain-txt">Plain text</label>
-          <textarea id="plain-txt" cols="30" rows="5" readonly></textarea>
+          <div>
+            <label for="plain-txt">Plain text</label>
+            <p class="copy" id="plain-txt-copy"><i class="far fa-copy"></i></p>
+          </div>
+          <div id="plain-txt"></div>
         </div>
         <div class="data__item">
-          <label for="result-key">Key</label>
-          <input type="text" id="result-key" readonly>
+          <div>
+            <label for="result-key">Key</label>
+            <p class="copy" id="result-key-copy"><i class="far fa-copy"></i></p>
+          </div>
+          <div id="result-key"></div>
         </div>
         <div class="data__item">
-          <label for="">Cipher text</label>
-          <textarea id="result-txt" cols="30" rows="5" readonly></textarea>
+          <div>
+            <label for="result-txt">Cipher text</label>
+            <p class="copy" id="result-txt-copy"><i class="far fa-copy"></i></p>
+          </div>
+          <div id="result-txt"></div>
         </div>
       </div>
     </div>

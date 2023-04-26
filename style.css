@@ -9,7 +9,6 @@ body {
   font-family: 'Courier New', Courier, monospace;
   font-weight: 500;
   background-color: #f3f3f3;
-  /* background-color: rgba(210, 246, 249, 0.685); */
 }
 
 textarea,
@@ -26,7 +25,6 @@ textarea {
 textarea,
 input {
   border-radius: 2px;
-  /* outline: none; */
   border: 1px solid #000;
 }
 
@@ -53,9 +51,34 @@ input {
   gap: 8px;
 }
 
+.data__item > div:first-child {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.data__item .copy {
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.data__item .copy:active {
+  transform: scale(1.1);
+}
+
 .data__item label {
   display: inline-block;
   margin-bottom: 4px;
+}
+
+.data__item .speed-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.data__item .speed-wrapper input {
+  padding: 0;
+  margin: 8px;
 }
 
 .data__item.actions {
@@ -81,11 +104,16 @@ input {
   display: flex;
 }
 
-.actions__item:first-child {
-  gap: 8px;
+.actions__item:first-child button:last-child {
+  border-left: none;
 }
 
-.actions__item div {
+.actions__item:first-child button.active {
+  box-shadow: inset 0 2px 4px rgb(0 0 0 / 60%), 0 1px 2px rgb(0 0 0 / 50%);
+  font-weight: bold;
+}
+
+/* .actions__item div {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -93,7 +121,7 @@ input {
 
 .actions__item div input {
   margin-bottom: 4px;
-}
+} */
 
 .actions__item button {
   border: 1px solid #000;
@@ -103,17 +131,35 @@ input {
   border-radius: 2px;
 }
 
-.actions__item button:hover {
-  box-shadow: 0 2px 4px rgb(0 0 0 / 15%), 0 1px 2px rgb(0 0 0 / 5%);
-}
-
-/* .actions__item button.active {
-  box-shadow: inset 0 2px 4px rgb(0 0 0 / 15%), 0 1px 2px rgb(0 0 0 / 5%);
+/* .data__item.actions button:hover {
+  box-shadow: 0 2px 4px rgb(0 0 0 / 60%), 0 1px 2px rgb(0 0 0 / 50%);
 } */
 
+.data__item.actions button:disabled:hover {
+  box-shadow: none;
+}
 
-.actions__item button:not(:first-child) {
-  border-left: none;
+#plain-txt,
+#result-key,
+#result-txt {
+  word-break: break-all;
+  padding: 8px;
+  border: 1px solid #000;
+  letter-spacing: 1px;
+  background-color: #fff;
+}
+
+mark {
+  font-size: 18px;
+}
+
+#plain-txt mark,
+#result-key mark {
+  background-color: yellow;
+}
+
+#result-txt mark {
+  background-color: yellowgreen;
 }
 
 .table-wrapper {
@@ -222,23 +268,13 @@ td {
   border-top: 1px solid;
 }
 
-td.row-active,
-td.col-active {
-  background-color: rgb(241, 238, 157);
+td.row-highlight,
+td.col-highlight {
+  background-color: rgb(245, 241, 138);
 }
 
-td.row-active.col-active {
-  background-color: rgb(246, 189, 120);
-}
-
-@keyframes bg-color {
-  from {
-    background-color: #fff;
-  }
-
-  to {
-    background-color: burlywood;
-  }
+td.highlight {
+  background-color: rgb(248, 155, 42);
 }
 
 @media (max-width: 1024px) {
