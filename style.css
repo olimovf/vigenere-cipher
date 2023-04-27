@@ -135,8 +135,8 @@ input {
   box-shadow: 0 2px 4px rgb(0 0 0 / 60%), 0 1px 2px rgb(0 0 0 / 50%);
 } */
 
-.data__item.actions button:disabled:hover {
-  box-shadow: none;
+.data__item.actions button.active:disabled:hover {
+  box-shadow: inset 0 2px 4px rgb(0 0 0 / 60%), 0 1px 2px rgb(0 0 0 / 50%);;
 }
 
 #plain-txt,

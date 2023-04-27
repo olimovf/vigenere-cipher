@@ -120,6 +120,8 @@ function restrict(bool) {
   txt.readOnly = bool;
   key.readOnly = bool;
   playBtn.disabled = bool;
+  encryptBtn.disabled = bool;
+  decryptBtn.disabled = bool;
 }
 
 // == // == // == ENCRYPTION == // == // == // ==
@@ -244,15 +246,15 @@ playBtn.addEventListener("click", function () {
 encryptBtn.addEventListener("click", function () {
   this.classList.add("active");
   this.nextElementSibling.classList.remove("active");
-  message.previousElementSibling.textContent = "Plain text";
-  resultTxt.previousElementSibling.textContent = "Cipher text";
+  message.previousElementSibling.children[0].textContent = "Plain text";
+  resultTxt.previousElementSibling.children[0].textContent = "Cipher text";
 });
 
 decryptBtn.addEventListener("click", function () {
   this.classList.add("active");
   this.previousElementSibling.classList.remove("active");
-  message.previousElementSibling.textContent = "Cipher text";
-  resultTxt.previousElementSibling.textContent = "Plain text";
+  message.previousElementSibling.children[0].textContent = "Cipher text";
+  resultTxt.previousElementSibling.children[0].textContent = "Plain text";
 });
 
 messageCopyBtn.addEventListener("click", function () {
